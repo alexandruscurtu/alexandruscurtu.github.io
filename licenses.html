@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lizenzen & Urheberrecht - Gärtner Scurtu</title>
+    <style>
+        /* Konsistente Farben und Kontraste mit den anderen Seiten */
+        :root { 
+            --primary: #1B5E20; 
+            --text: #333; 
+            --bg: #fff; 
+            --accent: #f4f4f4;
+            --focus-color: #FF5722;
+        }
+        
+        body { 
+            font-family: sans-serif; 
+            line-height: 1.6; 
+            color: var(--text); 
+            margin: 0; 
+            background: var(--bg); 
+        }
+        
+        /* Skip Link für Barrierefreiheit */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 0;
+            background: var(--focus-color);
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 0 0 8px 0;
+            z-index: 9999;
+            transition: top 0.3s ease;
+        }
+        
+        .skip-link:focus,
+        .skip-link:active {
+            top: 0;
+            outline: 4px solid white;
+            outline-offset: 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        
+        /* Header mit Logo */
+        .page-header {
+            padding: 20px;
+            background: linear-gradient(135deg, #f8fff8 0%, #e8f5e9 100%);
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .logo-title-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .company-logo {
+            height: 80px;
+            width: auto;
+            display: block;
+        }
+        
+        .company-title {
+            margin: 0;
+            color: var(--primary);
+            font-size: 2rem;
+        }
+        
+        /* Navigation mit verbessertem Kontrast */
+        nav { 
+            background: var(--primary); 
+            padding: 0;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.75rem 20px;
+        }
+        
+        nav ul { 
+            list-style: none; 
+            padding: 0; 
+            margin: 0; 
+            display: flex; 
+            gap: 10px; 
+            flex-wrap: wrap; 
+            justify-content: center;
+        }
+        
+        nav a { 
+            color: white; 
+            text-decoration: none; 
+            font-weight: bold; 
+            padding: 12px 20px; 
+            border-radius: 4px; 
+            display: inline-block;
+            min-height: 44px;
+            line-height: 20px;
+            text-align: center;
+        }
+        
+        nav a:hover, 
+        nav a.active { 
+            background: rgba(255,255,255,0.2); 
+        }
+        
+        main { 
+            padding: 40px 20px; 
+            max-width: 800px; 
+            margin: 0 auto; 
+        }
+        
+        h1, h2, h3 { 
+            color: var(--primary); 
+        }
+        
+        h2 {
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        
+        h3 {
+            margin-top: 20px;
+        }
+        
+        section {
+            margin-bottom: 40px;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        footer { 
+            background: #222; 
+            color: #fff; 
+            padding: 30px 20px; 
+            text-align: center; 
+            margin-top: 40px; 
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        footer a { 
+            color: #fff; 
+            text-decoration: underline;
+            padding: 4px 8px;
+        }
+        
+        /* Barrierefreiheit Fokus */
+        a:focus, 
+        button:focus { 
+            outline: 3px solid var(--focus-color);
+            outline-offset: 3px;
+        }
+        
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid var(--focus-color);
+            outline-offset: 3px;
+        }
+        
+        /* Spezielle Fokus-Styles für Navigation */
+        nav a:focus {
+            outline-color: #FFB74D;
+            background-color: rgba(255, 183, 77, 0.2);
+        }
+        
+        /* Für Footer-Links */
+        footer a:focus {
+            outline-color: white;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .logo-title-wrapper {
+                justify-content: center;
+                text-align: center;
+            }
+            
+            .company-logo {
+                height: 60px;
+            }
+            
+            .company-title {
+                font-size: 1.6rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            nav a {
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .company-logo {
+                height: 50px;
+            }
+            
+            .company-title {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip Link für Barrierefreiheit -->
+    <a href="#main-content" class="skip-link" id="skip-link">
+        Zum Hauptinhalt springen
+    </a>
+    
+    <!-- Header mit Logo -->
+    <header class="page-header">
+        <div class="header-container">
+            <div class="logo-title-wrapper">
+                <img src="logo.png" alt="Logo von Gärtner Scurtu" class="company-logo">
+                <h1 class="company-title">Gärtner Scurtu</h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav aria-label="Hauptnavigation">
+        <div class="nav-container">
+            <ul>
+                <li><a href="index.html">Home & Shop</a></li>
+                <li><a href="about.html">Über uns & Marke</a></li>
+                <li><a href="licenses.html" class="active" aria-current="page">Lizenzen</a></li>
+                <li><a href="privacy.html">Datenschutz</a></li>
+                <li><a href="imprint.html">Kontakt & Impressum</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <h1>Lizenzen & Rechtliches</h1>
+
+        <section id="kundenlizenzen">
+            <h2>1. Lizenzbedingungen für unsere Kunden</h2>
+            <p>Hier definieren wir, welche Rechte Sie beim Kauf unserer Produkte erwerben.</p>
+            
+            <h3>Für das E-Book "Der digitale Daumen"</h3>
+            <ul>
+                <li><strong>Eingeräumte Rechte:</strong> Sie erhalten ein einfaches, nicht übertragbares Recht zur Nutzung des E-Books für private Zwecke auf Ihren Endgeräten.</li>
+                <li><strong>Verbleibende Rechte:</strong> Alle Urheberrechte verbleiben bei der Gärtner Scurtu GmbH.</li>
+                <li><strong>Verbote:</strong> Jegliche Weiterverbreitung, öffentliche Zugänglichmachung oder der Weiterverkauf sind untersagt.</li>
+            </ul>
+
+            <h3>Für die Software "GardenOS"</h3>
+            <ul>
+                <li>Die Nutzung unterliegt dem Endbenutzer-Lizenzvertrag (EULA), dem Sie bei der Installation zustimmen müssen.</li>
+                <li><strong>Haftungsbeschränkung:</strong> Die Software wird "wie besehen" (as is) bereitgestellt. Wir haften nicht für Datenverlust oder Schäden am smarten Garten, es sei denn, sie beruhen auf Vorsatz oder grober Fahrlässigkeit unsererseits.</li>
+            </ul>
+        </section>
+
+        <section id="urheberrecht-medien">
+            <h2>2. Quellennachweis & Urheberrecht dieser Website</h2>
+            <p>Wir respektieren geistiges Eigentum. Nachfolgend dokumentieren wir die Lizenzen der auf dieser Website verwendeten Medien:</p>
+            <ul>
+                <li><strong>Logo & Grafiken:</strong> Das "Gärtner Scurtu"-Logo (Wort- und Bildmarke) wurde von uns erstellt und ist urheberrechtlich geschützt.</li>
+                <li><strong>Texte:</strong> Alle Texte auf dieser Website wurden von Gärtner Scurtu GmbH erstellt und sind urheberrechtlich geschützt.</li>
+                <li><strong>Schriftarten:</strong> Wir verwenden Standard-Systemschriftarten (sans-serif), für die keine gesonderten Webfont-Lizenzen erforderlich sind.</li>
+            </ul>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Gärtner Scurtu GmbH. <a href="imprint.html#accessibility">Barrierefreiheitserklärung</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const skipLink = document.getElementById('skip-link');
+            const mainContent = document.getElementById('main-content');
+            
+            if (skipLink && mainContent) {
+                skipLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    mainContent.setAttribute('tabindex', '-1');
+                    mainContent.focus();
+                    
+                    setTimeout(function() {
+                        mainContent.scrollIntoView({ behavior: 'smooth' });
+                    }, 10);
+                    
+                    setTimeout(function() {
+                        mainContent.removeAttribute('tabindex');
+                    }, 1000);
+                });
+                
+                skipLink.addEventListener('focus', function() {
+                    this.style.top = '0';
+                });
+                
+                skipLink.addEventListener('blur', function() {
+                    this.style.top = '-100px';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

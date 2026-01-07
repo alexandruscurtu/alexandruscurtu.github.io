@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home & Produkte - Gärtner Scurtu</title>
+
+    <style>
+        :root {
+            --primary: #1B5E20;
+            --primary-light: #2E7D32;
+            --text: #333;
+            --bg: #fff;
+            --accent: #f4f4f4;
+            --focus-color: #FF5722;
+        }
+
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            margin: 0;
+            background: var(--bg);
+        }
+
+        .page-header {
+            padding: 20px;
+            background: linear-gradient(135deg, #f8fff8 0%, #e8f5e9 100%);
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .logo-title-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .company-logo {
+            height: 80px;
+            width: auto;
+            display: block;
+        }
+
+        .company-title {
+            margin: 0;
+            color: var(--primary);
+            font-size: 2rem;
+        }
+
+        nav {
+            background: var(--primary);
+            padding: 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.75rem 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 12px 20px;
+            border-radius: 4px;
+            display: inline-block;
+            min-height: 44px;
+            line-height: 20px;
+            text-align: center;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        nav a.active {
+            background: rgba(255, 255, 255, 0.25);
+            outline: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        main {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .welcome-section {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+            border-left: 5px solid var(--primary);
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin-top: 0;
+        }
+
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 10px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .product-card {
+            border: 1px solid #ddd;
+            padding: 25px;
+            background: var(--accent);
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        .product-card h3 {
+            color: var(--primary);
+            margin-top: 0;
+            font-size: 1.4rem;
+        }
+
+        .product-card p {
+            flex-grow: 1;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin: 15px 0;
+        }
+
+        .license-note {
+            background: rgba(27, 94, 32, 0.1);
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 3px solid var(--primary);
+            margin: 15px 0;
+            font-size: 0.9rem;
+        }
+
+        button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            min-height: 44px;
+            min-width: 44px;
+            transition: all 0.2s ease;
+            align-self: flex-start;
+            margin-top: auto;
+        }
+
+        button:hover {
+            background-color: #0D3C13;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        button:active {
+            transform: scale(0.97);
+            background-color: #09290D;
+        }
+
+        footer {
+            background: #222;
+            color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: underline;
+            padding: 8px 12px;
+            display: inline-block;
+        }
+
+        .copyright {
+            margin-top: 20px;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        a:focus,
+        button:focus {
+            outline: 3px solid var(--focus-color);
+            outline-offset: 3px;
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid var(--focus-color);
+            outline-offset: 3px;
+        }
+
+        nav a:focus {
+            outline-color: #FFB74D;
+            background-color: rgba(255, 183, 77, 0.2);
+        }
+
+        footer a:focus {
+            outline-color: white;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .logo-title-wrapper {
+                justify-content: center;
+                text-align: center;
+            }
+            
+            .company-logo {
+                height: 60px;
+            }
+            
+            .company-title {
+                font-size: 1.6rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            nav a {
+                width: 100%;
+                box-sizing: border-box;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-container {
+                padding: 0.75rem 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .company-logo {
+                height: 50px;
+            }
+            
+            .company-title {
+                font-size: 1.4rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .welcome-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="page-header">
+        <div class="header-container">
+            <div class="logo-title-wrapper">
+                <img src="logo.png" alt="Logo von Gärtner Scurtu" class="company-logo">
+                <h1 class="company-title">Gärtner Scurtu</h1>
+            </div>
+        </div>
+    </header>
+
+    <nav aria-label="Hauptnavigation">
+        <div class="nav-container">
+            <ul>
+                <li><a href="index.html" class="active" aria-current="page">Home & Shop</a></li>
+                <li><a href="about.html">Über uns & Marke</a></li>
+                <li><a href="licenses.html">Lizenzen</a></li>
+                <li><a href="privacy.html">Datenschutz</a></li>
+                <li><a href="imprint.html">Kontakt & Impressum</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="welcome-section">
+            <h2>Willkommen bei Gärtner Scurtu</h2>
+            <p>
+                Ihr Partner für digitale Gärten und intelligente Bepflanzung.
+                Wir verbinden Natur mit modernster Datentechnik.
+            </p>
+            <p>
+                Entdecken Sie unsere innovativen Produkte für Ihren smarten Garten 
+                und profitieren Sie von unserer langjährigen Expertise in der 
+                Verbindung von Gärtnerei und Digitalisierung.
+            </p>
+        </section>
+
+        <section>
+            <h2>Unsere Produkte</h2>
+            <p>Wählen Sie die passende Lösung für Ihren smarten Garten.</p>
+
+            <div class="product-grid">
+                <div class="product-card">
+                    <h3>E-Book: Moderne Gartenpflege</h3>
+                    <div class="price">19,99 €</div>
+                    <p>Das umfassende Handbuch für moderne Gartenpflege mit digitalen Werkzeugen.</p>
+                    <div class="license-note">
+                        <strong>Lizenzhinweis:</strong>
+                        Nur für den privaten Gebrauch. Weitergabe und Verkauf verboten.
+                    </div>
+                    <button aria-label="E-Book 'Der digitale Daumen' für 19,99 € kaufen" title="Nur ein Mock!">
+                        Jetzt kaufen
+                    </button>
+                </div>
+
+                <div class="product-card">
+                    <h3>Software: GartenPlaner Pro</h3>
+                    <div class="price">Kostenlos</div>
+                    <p>Unsere leistungsstarke Gartenverwaltungssoftware mit KI-gestützten Empfehlungen.</p>
+                    <div class="license-note">
+                        <strong>Lizenzhinweis:</strong>
+                        Nutzung unterliegt unseren EULA. Die Basisversion ist kostenfrei.
+                    </div>
+                    <button aria-label="GardenOS Software kostenlos herunterladen" title="Nur ein Mock!">
+                        Kostenlos downloaden
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>
+                <a href="imprint.html#accessibility">Barrierefreiheitserklärung</a> |
+                <a href="imprint.html#contact">Kontakt & Impressum</a> |
+                <a href="privacy.html">Datenschutz</a>
+            </p>
+            <p class="copyright">
+                &copy; 2024 Gärtner Scurtu GmbH. Alle Rechte vorbehalten.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(button => {
+                button.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.click();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum & Kontakt - Gärtner Scurtu</title>
+    <style>
+        /* Konsistente Farben und Kontraste mit den anderen Seiten */
+        :root { 
+            --primary: #1B5E20; 
+            --text: #333; 
+            --bg: #fff; 
+            --accent: #f4f4f4;
+            --focus-color: #FF5722;
+        }
+        
+        body { 
+            font-family: sans-serif; 
+            line-height: 1.6; 
+            color: var(--text); 
+            margin: 0; 
+            background: var(--bg); 
+        }
+        
+        /* Skip Link für Barrierefreiheit */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 0;
+            background: var(--focus-color);
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 0 0 8px 0;
+            z-index: 9999;
+            transition: top 0.3s ease;
+        }
+        
+        .skip-link:focus,
+        .skip-link:active {
+            top: 0;
+            outline: 4px solid white;
+            outline-offset: 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        
+        /* Header mit Logo */
+        .page-header {
+            padding: 20px;
+            background: linear-gradient(135deg, #f8fff8 0%, #e8f5e9 100%);
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .logo-title-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .company-logo {
+            height: 80px;
+            width: auto;
+            display: block;
+        }
+        
+        .company-title {
+            margin: 0;
+            color: var(--primary);
+            font-size: 2rem;
+        }
+        
+        /* Navigation mit verbessertem Kontrast */
+        nav { 
+            background: var(--primary); 
+            padding: 0;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.75rem 20px;
+        }
+        
+        nav ul { 
+            list-style: none; 
+            padding: 0; 
+            margin: 0; 
+            display: flex; 
+            gap: 10px; 
+            flex-wrap: wrap; 
+            justify-content: center;
+        }
+        
+        nav a { 
+            color: white; 
+            text-decoration: none; 
+            font-weight: bold; 
+            padding: 12px 20px; 
+            border-radius: 4px; 
+            display: inline-block;
+            min-height: 44px;
+            line-height: 20px;
+            text-align: center;
+        }
+        
+        nav a:hover, 
+        nav a.active { 
+            background: rgba(255,255,255,0.2); 
+        }
+        
+        main { 
+            padding: 40px 20px; 
+            max-width: 800px; 
+            margin: 0 auto; 
+        }
+        
+        h1, h2, h3 { 
+            color: var(--primary); 
+        }
+        
+        h1 {
+            margin-top: 0;
+        }
+        
+        h2 {
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+        }
+        
+        section {
+            margin-bottom: 40px;
+        }
+        
+        footer { 
+            background: #222; 
+            color: #fff; 
+            padding: 30px 20px; 
+            text-align: center; 
+            margin-top: 40px; 
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        footer a { 
+            color: #fff; 
+            text-decoration: underline;
+            padding: 4px 8px;
+        }
+        
+        /* Barrierefreiheit Fokus */
+        a:focus, 
+        button:focus { 
+            outline: 3px solid var(--focus-color);
+            outline-offset: 3px;
+        }
+        
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid var(--focus-color);
+            outline-offset: 3px;
+        }
+        
+        /* Spezielle Fokus-Styles für Navigation */
+        nav a:focus {
+            outline-color: #FFB74D;
+            background-color: rgba(255, 183, 77, 0.2);
+        }
+        
+        /* Für Footer-Links */
+        footer a:focus {
+            outline-color: white;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .logo-title-wrapper {
+                justify-content: center;
+                text-align: center;
+            }
+            
+            .company-logo {
+                height: 60px;
+            }
+            
+            .company-title {
+                font-size: 1.6rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            nav a {
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .company-logo {
+                height: 50px;
+            }
+            
+            .company-title {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip Link für Barrierefreiheit -->
+    <a href="#main-content" class="skip-link" id="skip-link">
+        Zum Hauptinhalt springen
+    </a>
+    
+    <!-- Header mit Logo -->
+    <header class="page-header">
+        <div class="header-container">
+            <div class="logo-title-wrapper">
+                <img src="logo.png" alt="Logo von Gärtner Scurtu" class="company-logo">
+                <h1 class="company-title">Gärtner Scurtu</h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav aria-label="Hauptnavigation">
+        <div class="nav-container">
+            <ul>
+                <li><a href="index.html">Home & Shop</a></li>
+                <li><a href="about.html">Über uns & Marke</a></li>
+                <li><a href="licenses.html">Lizenzen</a></li>
+                <li><a href="privacy.html">Datenschutz</a></li>
+                <li><a href="imprint.html" class="active" aria-current="page">Kontakt & Impressum</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <h1>Kontakt & Impressum</h1>
+
+        <section>
+            <h2>Kontakt aufnehmen</h2>
+            <p>Haben Sie Fragen zu unseren Produkten oder Lizenzen?</p>
+            <p>E-Mail: office@gaertner-scurtu.at<br>Tel: +43 1 234 567 89</p>
+        </section>
+
+        <section>
+            <h2>Impressum</h2>
+            <p>Informationspflicht laut §5 E-Commerce Gesetz, §14 Unternehmensgesetzbuch, §63 Gewerbeordnung und Offenlegungspflicht laut §25 Mediengesetz.</p>
+            
+            <p><strong>Gärtner Scurtu GmbH</strong><br>
+            Musterstraße 1<br>
+            1010 Wien, Österreich</p>
+            
+            <p><strong>Unternehmensgegenstand:</strong> Entwicklung und Vertrieb von Software für den Gartenbereich sowie Handel mit digitalen Gütern (E-Books).</p>
+            <p><strong>UID-Nummer:</strong> ATU12345678<br>
+            <strong>Firmenbuchnummer:</strong> FN 123456 x<br>
+            <strong>Firmenbuchgericht:</strong> Handelsgericht Wien<br>
+            <strong>Sitz:</strong> 1010 Wien</p>
+
+            <p><strong>Mitglied bei:</strong> WKO Wien, Fachgruppe UBIT (Unternehmensberatung, Buchhaltung und Informationstechnologie)</p>
+            <p><strong>Berufsrecht:</strong> Gewerbeordnung: www.ris.bka.gv.at<br>
+            <strong>Aufsichtsbehörde/Gewerbbehörde:</strong> Magistrat der Stadt Wien</p>
+
+            <p><strong>Geschäftsführung:</strong> Alexandru Scurtu (100%)</p>
+        </section>
+
+        <section id="accessibility">
+            <h2>Barrierefreiheitserklärung</h2>
+            <p>Die Gärtner Scurtu GmbH ist bemüht, ihre Website im Einklang mit den nationalen Rechtsvorschriften zur Umsetzung der Richtlinie (EU) 2016/2102 des Europäischen Parlaments und des Rates barrierefrei zugänglich zu machen.</p>
+            <p>Diese Erklärung wurde am 24.05.2024 erstellt.</p>
+            <p><strong>Stand der Vereinbarkeit mit den Anforderungen:</strong> Diese Website ist wegen der folgenden Unvereinbarkeiten(Fehlender Skip-Link für Tastatur-Nutzer) teilweise mit WCAG 2.2 Konformitätsstufe AA vereinbar.</p>
+            <p><strong>Feedback und Kontakt:</strong> Sollten Ihnen Mängel in Bezug auf die barrierefreie Gestaltung auffallen, senden Sie uns bitte eine E-Mail an office@gaertner-scurtu.at.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Gärtner Scurtu GmbH. <a href="imprint.html#accessibility">Barrierefreiheitserklärung</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const skipLink = document.getElementById('skip-link');
+            const mainContent = document.getElementById('main-content');
+            
+            if (skipLink && mainContent) {
+                skipLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    mainContent.setAttribute('tabindex', '-1');
+                    mainContent.focus();
+                    
+                    setTimeout(function() {
+                        mainContent.scrollIntoView({ behavior: 'smooth' });
+                    }, 10);
+                    
+                    setTimeout(function() {
+                        mainContent.removeAttribute('tabindex');
+                    }, 1000);
+                });
+                
+                skipLink.addEventListener('focus', function() {
+                    this.style.top = '0';
+                });
+                
+                skipLink.addEventListener('blur', function() {
+                    this.style.top = '-100px';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
